@@ -51,6 +51,7 @@ const ExpenseForm = () => {
     setEnteredAmount('')
     setEnteredDate('')
   }
+  console.log(enteredTitle)
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
