@@ -1,14 +1,16 @@
 import React from 'react';
-
 import './ExpensesFilter.css';
 
+const ExpensesFilter = (props) => {
 
-const ExpensesFilter = () => {
+  const dropdownChangeHandler = (event) =>{
+      props.onChangeFilter(event.target.value)
+  }
   return (
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
-        <select>
+        <select value={props.selected} onChange={dropdownChangeHandler}>
           <option value='2022'>2022</option>
           <option value='2021'>2021</option>
           <option value='2020'>2020</option>
@@ -38,5 +40,5 @@ export default ExpensesFilter;
 // filtera troškova do ove komponente troškova i onda ovdje u komponenti troškova pohranjenoj u stanju ne trebate
 //  ništa, ali još ne morate filtrirati listu troškova budući da smo stvarno naučili kako to funkcionira, samo želim
 //  da slušate događaj promjene, a zatim za unesene podatke na komponentu višeg nivoa, dakle na komponentu 
-// troškova iu toj komponenti pohranjenoj u stanju koje je vaš cilj, naravno, uporedite vaše rješenje
-//  s mojim želi da završite, ali svakako prvo probate sami
+// troškova iu toj komponenti pohranjenoj u stanju koje je vaš cilj, naravno, uporedite vaše 
+// rješenje s mojim želi da završite, ali svakako prvo probate sami
